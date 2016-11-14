@@ -58,7 +58,7 @@ Result of the command `mount`:
 [ec2-user@ip-172-20-0-4 ~]$ mount
 sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)
 proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
-devtmpfs on /dev type devtmpfs (rw,nosuid,seclabel,size=7598116k,nr_inodes=1899529,mode=755)
+devtmpfs on /dev type devtmpfs (rw,nosuid,seclabel,size=7598144k,nr_inodes=1899536,mode=755)
 securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
 tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,seclabel)
 devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000)
@@ -66,42 +66,41 @@ tmpfs on /run type tmpfs (rw,nosuid,nodev,seclabel,mode=755)
 tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,seclabel,mode=755)
 cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)
 pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
-cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpuacct,cpu)
-cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
-cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)
-cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
 cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_prio,net_cls)
-cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
 cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
-cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
 cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
 cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpuacct,cpu)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
 configfs on /sys/kernel/config type configfs (rw,relatime)
 /dev/xvda2 on / type xfs (rw,relatime,seclabel,attr2,inode64,noquota)
 selinuxfs on /sys/fs/selinux type selinuxfs (rw,relatime)
 debugfs on /sys/kernel/debug type debugfs (rw,relatime)
-hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,seclabel)
 mqueue on /dev/mqueue type mqueue (rw,relatime,seclabel)
-systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=31,pgrp=1,timeout=300,minproto=5,maxproto=5,direct)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=30,pgrp=1,timeout=300,minproto=5,maxproto=5,direct)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,seclabel)
 tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=1497260k,mode=700,uid=1000,gid=1000)
-binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
 ```
 ## 3. Show the reserve space of any non-root, ext-based volumes
 ```
-[ec2-user@ip-172-20-0-4 ~]$ df -H
+[ec2-user@ip-172-20-0-4 ~]$ df -h
 Filesystem      Size  Used Avail Use% Mounted on
-/dev/xvda2       11G  1.4G  9.5G  13% /
-devtmpfs        7.8G     0  7.8G   0% /dev
-tmpfs           7.7G     0  7.7G   0% /dev/shm
-tmpfs           7.7G   18M  7.7G   1% /run
-tmpfs           7.7G     0  7.7G   0% /sys/fs/cgroup
-tmpfs           1.6G     0  1.6G   0% /run/user/1000
+/dev/xvda2      100G  1.5G   99G   2% /
+devtmpfs        7.3G     0  7.3G   0% /dev
+tmpfs           7.2G     0  7.2G   0% /dev/shm
+tmpfs           7.2G   17M  7.2G   1% /run
+tmpfs           7.2G     0  7.2G   0% /sys/fs/cgroup
+tmpfs           1.5G     0  1.5G   0% /run/user/1000
 ```
 ```
 [ec2-user@ip-172-20-0-4 ~]$ sudo fdisk -l
 WARNING: fdisk GPT support is currently new, and therefore in an experimental phase. Use at your own discretion.
 
-Disk /dev/xvda: 10.7 GB, 10737418240 bytes, 20971520 sectors
+Disk /dev/xvda: 107.4 GB, 107374182400 bytes, 209715200 sectors
 Units = sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -110,7 +109,7 @@ Disk label type: gpt
 
 #         Start          End    Size  Type            Name
  1         2048         4095      1M  BIOS boot parti
- 2         4096     20971486     10G  Microsoft basic
+ 2         4096    209715166    100G  Microsoft basic
  ```
 ## 4. Show that transparent hugepages is disabled
 The command `cat /sys/kernel/mm/transparent_hugepage/enabled` is executed on every node of the cluster:

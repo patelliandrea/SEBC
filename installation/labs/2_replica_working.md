@@ -4,7 +4,7 @@ An instance of MySQL Server is installed on the first two nodes of the cluster (
 [ec2-user@ip-172-20-0-4 ~]$ wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
 [ec2-user@ip-172-20-0-4 ~]$ sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
 [ec2-user@ip-172-20-0-4 ~]$ sudo yum update
-[ec2-user@ip-172-20-0-4 ~]$ sudo yum install mysql-server
+[ec2-user@ip-172-20-0-4 ~]$ sudo yum install mysql-server -y
 [ec2-user@ip-172-20-0-4 ~]$ sudo service mysqld start
 ```
 To install the mysql client, on everynode the following commands were executed:
@@ -38,12 +38,7 @@ OK, successfully used password, moving on...
 Setting the root password ensures that nobody can log into the MySQL
 root user without the proper authorisation.
 
-Set root password? [Y/n] y
-New password:
-Re-enter new password:
-Password updated successfully!
-Reloading privilege tables..
- ... Success!
+Set root password? [Y/n] n
 
 Remove anonymous users? [Y/n] y
  ... Success!
