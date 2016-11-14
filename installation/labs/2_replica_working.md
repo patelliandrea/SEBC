@@ -279,7 +279,7 @@ mysql> exit;
 Bye
 ```
 
-We can now check if the replica is correctly working executing, from the replica node, the following command;
+And check if the replica is correctly working executing, from the replica node, the following command;
 ```
 [ec2-user@ip-172-20-0-5 ~]$ mysql -u root -p
 Enter password:
