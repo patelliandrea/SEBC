@@ -233,12 +233,6 @@ Query OK, 1 row affected (0.01 sec)
 mysql> grant all on rman.* TO 'rman'@'%' IDENTIFIED BY 'rman';
 Query OK, 0 rows affected (0.00 sec)
 
-mysql> create database nav DEFAULT CHARACTER SET utf8;
-Query OK, 1 row affected (0.01 sec)
-
-mysql> grant all on nav.* TO 'nav'@'%' IDENTIFIED BY 'nav';
-Query OK, 0 rows affected (0.00 sec)
-
 mysql> create database metastore DEFAULT CHARACTER SET utf8;
 
 Query OK, 1 row affected (0.01 sec)
@@ -262,12 +256,6 @@ mysql> create database sentry DEFAULT CHARACTER SET utf8;
 Query OK, 1 row affected (0.00 sec)
 
 mysql> grant all on sentry.* to 'sentry'@'%' IDENTIFIED BY 'sentry';
-Query OK, 0 rows affected (0.00 sec)
-
-mysql> create database navms DEFAULT CHARACTER SET utf8;
-Query OK, 1 row affected (0.00 sec)
-
-mysql> grant all on navms.* to 'navms'@'%' IDENTIFIED BY 'navms';
 Query OK, 0 rows affected (0.00 sec)
 
 mysql> exit;
@@ -299,13 +287,11 @@ mysql> show databases;
 | hue                |
 | metastore          |
 | mysql              |
-| nav                |
 | oozie              |
 | performance_schema |
 | rman               |
 | scm                |
 | sentry             |
-| navms              |
 +--------------------+
 10 rows in set (0.00 sec)
 ```

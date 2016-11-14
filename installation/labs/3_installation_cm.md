@@ -22,3 +22,13 @@ Once the database is configured, we can start the cloudera server service:
 After the service is started, we can browse to http://padrinocluster1:7180 to access cloudera manager and start the installation of the agents. 
 The first step is to search for the hosts of the cluster, this is easily done by searching for hosts with the ip in the range 172.20.0.[4-8].
 ![host selection](../png/host_selection.png)
+After selecting the hosts, select the authentication method:
+![auth](../png/auth_settings.png)
+
+When the installation is done, select the roles to install on the hosts as following:
+![auth](../png/cluster_setup.png)
+
+And setup the databases connection using the previously set credentials:
+![auth](../png/databases.png)
+
+In the next page leave default settings and wait for the services to be deployed and started.
