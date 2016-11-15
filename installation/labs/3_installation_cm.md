@@ -34,7 +34,7 @@ And setup the databases connection using the previously set credentials:
 In the next page leave default settings and wait for the services to be deployed and started.
 
 Once it started, you can check the status of CM on http://padrinocluster1:7180
-![cm](./3_cm_installed.png.png)
+![cm](./3_cm_installed.png)
 
 ## New role assignment
 After installation, the role assignment was changed since I noticed that I put too many services on the namenode. This is the new configuration of the cluster:
