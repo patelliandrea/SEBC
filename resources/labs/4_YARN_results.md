@@ -151,14 +151,70 @@ RED_MB=1228
 Mappers=6
 Reducers=3
 Container Memory=1536                                        
-                                                    
+          
+Running teragen                                          
 real    3m6.557s                                    
 user    0m7.835s                                    
 sys     0m0.348s                                    
-                                                    
+               
+Running terasort                                     
 real    8m35.780s                                   
 user    0m9.969s                                    
 sys     0m0.428s                                    
 Deleted /user/patelliandrea/results/tg-10GB-6-3-1536
 Deleted /user/patelliandrea/results/ts-10GB-6-3-1536
+
+MAP_MB=409
+RED_MB=409
+Mappers=6
+Reducers=6
+Container Memory=512
+
+Running teragen
+real    2m40.298s
+user    0m7.552s
+sys     0m0.361s
+
+Running terasort
+real    4m28.733s
+user    0m9.692s
+sys     0m0.388s
+Deleted /user/patelliandrea/results/tg-10GB-6-6-512
+Deleted /user/patelliandrea/results/ts-10GB-6-6-512
+
+MAP_MB=819
+RED_MB=819
+Mappers=6
+Reducers=6
+Container Memory=1024
+
+Running teragen
+real    2m33.422s
+user    0m7.550s
+sys     0m0.322s
+
+Running terasort
+real    4m3.297s
+user    0m9.371s
+sys     0m0.381s
+Deleted /user/patelliandrea/results/tg-10GB-6-6-1024
+Deleted /user/patelliandrea/results/ts-10GB-6-6-1024
+
+MAP_MB=1228
+RED_MB=1228
+Mappers=6
+Reducers=6
+Container Memory=1536
+
+Running teragen
+real    3m20.206s
+user    0m7.481s
+sys     0m0.333s
+
+Running terasort
+real    9m47.200s
+user    0m10.879s
+sys     0m0.419s
+Deleted /user/patelliandrea/results/tg-10GB-6-6-1536
+Deleted /user/patelliandrea/results/ts-10GB-6-6-1536
 ```
