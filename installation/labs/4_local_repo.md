@@ -11,7 +11,7 @@ Once the daemon is started, create the local repo folder using the following com
 ```
 
 And add the local repository to cloudera manager parcel configuration:
-![custom repo](../png/custom_repo.png)
+![custom repo](./4_local_repo.png)
 
 To add new parcels to the repo, simply stop the httpd daemon, copy the `.parcel` file in the folder `/var/www/html/local_repo` and create a `manifest.json` file containing all the information regarding the locally available parcels. Once the daemon is restarted, all the parcels will be available from cloudera manager.
 
