@@ -34,4 +34,4 @@ And setup the databases connection using the previously set credentials:
 In the next page leave default settings and wait for the services to be deployed and started.
 
 Once it started, you can check the status of CM on http://padrinocluster1:7180
-![cm](../png/cm_installed.png)
+![cm](../png/cm.png)
