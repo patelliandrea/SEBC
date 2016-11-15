@@ -11,7 +11,7 @@ The cloudera Manager Server packages are installed on the same node where the da
 ```
 And ran `scm_prepare_database.sh`:
 ```
-/usr/share/cmf/schema/scm_prepare_database.sh -u root -preskuf90 mysql scm scm scm
+/usr/share/cmf/schema/scm_prepare_database.sh -u root mysql scm scm scm
 ```
 Once the database is configured, we can start the cloudera server service:
 ```
