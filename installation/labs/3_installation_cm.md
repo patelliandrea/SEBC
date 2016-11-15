@@ -35,3 +35,7 @@ In the next page leave default settings and wait for the services to be deployed
 
 Once it started, you can check the status of CM on http://padrinocluster1:7180
 ![cm](../png/cm.png)
+
+## New role assignment
+After installation, the role assignment was changed since I noticed that I put too many services on the namenode. This is the new configuration of the cluster:
+![new nodes](../png/new_roles.png)
