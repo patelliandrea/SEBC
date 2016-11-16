@@ -22,15 +22,16 @@ To run the upgrade wizard, simply click on "Re-run Upgrade Wizard" from the "All
 * Hive Gateway
 
 ### What steps must be completed before integrating Cloudera Manager with Kerberos?
-	* `openldap-clients` have to be installed on the Cloudera Manager Server host
-	* `krb5-workstation` installed on every host
-	* `krb5-libs` installed on every host
-	* The realm has to support renewable tickets
-	* If using AES-256 encryption, install the JCE policy file
-	* Get or create a Kerberos Principal for the Cloudera Manager Server
-	* Enable Kerberos using the Wizard
+* `openldap-clients` have to be installed on the Cloudera Manager Server host
+* `krb5-workstation` installed on every host
+* `krb5-libs` installed on every host
+* The realm has to support renewable tickets
+* If using AES-256 encryption, install the JCE policy file
+* Get or create a Kerberos Principal for the Cloudera Manager Server
+* Enable Kerberos using the Wizard
+
 After enabling Kerberos, you need to:
-	* Create HDFS superuser
-	* Get or Create a Kerberos principal for each user account
-	* Prepare the cluster for each user (create home dir)
-	* Check that Kerberos is actually working (kinit for your user account, submit mapreduce job)
+* Create HDFS superuser
+* Get or Create a Kerberos principal for each user account
+* Prepare the cluster for each user (create home dir)
+* Check that Kerberos is actually working (kinit for your user account, submit mapreduce job)
