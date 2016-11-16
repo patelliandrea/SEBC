@@ -14,7 +14,7 @@ The CM agents can be updated using the upgrade wizard or the updated version can
 To run the upgrade wizard, simply click on "Re-run Upgrade Wizard" from the "All Hosts" page.
 
 ### Give the `tsquery` statement used to chart Hue's CPU utilization?
-select (cpu_system_rate + cpu_user_rate) where serviceName=hue
+`select (cpu_system_rate + cpu_user_rate) where serviceName=hue`
 
 ### Name all the roles that make up the Hive service
 * Hive Metastore Server
