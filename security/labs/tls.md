@@ -1,9 +1,9 @@
 ## Enable TLS Level 1
 In order to enable TLS, a keystore has to be created beforehand. To do that, run on the host where cloudera server is running:
 ```
-[ec2-user@ip-172-20-0-4 ~]$ sudo keytool -genkeypair -alias ip-172-20-0-6 -keyalg RSA -keystore \
-/opt/cloudera/security/jks/ip-172-20-0-6-keystore.jks -keysize 2048 -dname \
-"CN=cmhost.sec.example.com,OU=Security,O=Example,L=Denver,ST=Colorado,C=US" \
+[ec2-user@ip-172-20-0-4 ~]$ sudo keytool -genkeypair -alias ip-172-20-0-4 -keyalg RSA -keystore \
+/opt/cloudera/security/jks/ip-172-20-0-4-keystore.jks -keysize 2048 -dname \
+"CN=ip-172-20-0-4.eu-central-1.compute.internal,OU=Security,O=Example,L=Denver,ST=Colorado,C=US" \
 -storepass password -keypass password
 ```
 
