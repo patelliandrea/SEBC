@@ -1,5 +1,11 @@
 ## Enable TLS Level 1
-Followed this procedure: http://www.cloudera.com/documentation/enterprise/latest/topics/cm_sg_config_tls_encr.html without enabling TLS encyption for CM.
+In order to enable TLS, a keystore has to be created beforehand. To do that, run on the host where cloudera server is running:
+```
+[ec2-user@ip-172-20-0-4 ~]$ sudo keytool -genkeypair -alias ip-172-20-0-6 -keyalg RSA -keystore \
+/opt/cloudera/security/jks/ip-172-20-0-6-keystore.jks -keysize 2048 -dname \
+"CN=cmhost.sec.example.com,OU=Security,O=Example,L=Denver,ST=Colorado,C=US" \
+-storepass password -keypass password
+```
 
 The first step is to enable "Use TLS Encryption for Agents" to true in Administration->Settings->Security.
 
@@ -15,7 +21,9 @@ And restart on every host the cloudera agent:
 [ec2-user@ip-172-20-0-4 ~]$ ansible padrinocluster -a "sudo service cloudera-scm-agent restart"
 ```
 
-Once the agents are restarted, cloudera manager is not reachable anymore. Looking at the Cloudera Manager server logs (`/var/log/cloudera-scm-server/cloudera-scm-server.log`) the following error happened:
+
+## Issues encountered
+If you don't create the keystore beforehand, once the agents are restarted, cloudera manager is not reachable anymore. Looking at the Cloudera Manager server logs (`/var/log/cloudera-scm-server/cloudera-scm-server.log`) the following error happened:
 ```
 2016-11-16 12:12:18,068 WARN MainThread:org.mortbay.log: failed SslSelectChannelConnector@0.0.0.0:7182: java.io.FileNotFoundException: /var/lib/cloudera-scm-server/.keystore (No such file or directory)
 2016-11-16 12:12:18,068 WARN MainThread:org.mortbay.log: failed Server@5d0f32ef: java.io.FileNotFoundException: /var/lib/cloudera-scm-server/.keystore (No such file or directory)
@@ -47,7 +55,7 @@ Caused by: java.io.FileNotFoundException: /var/lib/cloudera-scm-server/.keystore
 
 ```
 
-## Restore previous state
+### Restore previous state
 To disable TLS, the first step is to stop `cloudera-scm-server` on the server node and `cloudera-scm-agent on every node.
 
 Then we need to replace `use_tls=1` to `use_tls=0` in `/etc/cloudera-scm-agent/config.init` on every node.
@@ -74,3 +82,4 @@ mysql> UPDATE CONFIGS SET value='false' where attr="agent_tls";
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 ```
+
