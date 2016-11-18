@@ -1,4 +1,11 @@
+The first step is to add the parcel repo:
+![parcel selection](../parcel_sel.png)
 
+Then select the version to install:
+![select version](../select_cdh_version.png)
+
+While installing the parcels for cloudera 5.7.4 got the following error:
+![failure](../cluster_installation_fail.png)
 
 ## Issue
 After installing cloudera manager and deploying the agents, the following error was present on every agent log:
