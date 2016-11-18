@@ -115,7 +115,7 @@ And  on every node we need to add it to the classpath
 ```
 [ec2-user@ip-172-30-2-4 ~]$ echo 'export CLASSPATH=/usr/share/java/mysql-connector-java-5.1.40-bin.jar:$CLASSPATH' > /etc/profile.d/classpath.sh
 ```
-
+`
 ## Setup roop password for mysql
 ```
 [ec2-user@ip-172-30-2-4 ~]$ mysql_secure_installation
