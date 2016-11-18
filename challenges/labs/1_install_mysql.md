@@ -1,5 +1,5 @@
 # Install mysql
-Mysql is installed on the first node of the cluster (ip-172-30-2-4.eu-central-1.compute.internal) where cloudera manager server will run.
+Mysql is installed on the first node of the cluster (ip-172-30-2-4.eu-central-1.compute.internal)n.
 
 ## Add repositories
 The first step is to download the rpm and install the repo.
