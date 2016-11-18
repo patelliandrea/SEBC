@@ -54,6 +54,29 @@ Traceback (most recent call last):
 ValueError: too many values to unpack
 ```
 
-Apparently cloudera manager server wasn't able to connect to the database and was failing installation. It was deploying the agents without setting the cloudera server hostname so the agents were failing to heartbeat
 
 Proceeded to readd the management server and then recreate the cluster.
+
+Added the management services but it takes forever to start, no logs are available
+![mgmt services](../management_services.png)
+
+Proceeding to reinstall everything.
+
+Deleted cloudera management service and tried to redeploy them and didn't work.
+
+Reinstalled everything everywhere:
+```
+sudo yum install -y cloudera-manager-server
+ansible all -a "sudo yum install -y cloudera-manager-agent cloudera-manager-daemons"
+ansible all -a 'sudo sed -i "s/server\_host=localhost/server_host=ip-172-30-2-5.eu-central-1.compute.internal/'
+ansible all -a "sudo service cloudera-scm-agent restart"
+sudo service cloudera-scm-server restart
+```
+
+After restarting it's still not possible to start host monitor and everything because of following error:
+![db error](../database_error.png)
+
+Checking the agent logs, the error is still the same but they're hearthbeating:
+![hearthbeats](../heartbeats.png)
+
+But it's still not possible to test the database connection.

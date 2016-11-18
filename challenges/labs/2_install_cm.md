@@ -18,7 +18,7 @@ Saving to: ‘cloudera-manager.repo’
 
 We can now install cloudera manager server:
 ```
-[ec2-user@ip-172-30-2-5 ~]$ sudo yum install -y cloudera-manager-server
+[ec2-user@ip-172-30-2-5 ~]$ sudo yum install -y cloudera-manager-server cloudera-manager-daemons
 ```
 
 Prepare the database
