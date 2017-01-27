@@ -130,23 +130,23 @@ Then we can download and copy the sql connector:
 
 [ec2-user@ip-10-1-0-4 ~]$ ansible all -a 'tar -zxvf mysql-connector-java-5.1.40.tar.gz'
 
-[ec2-user@ip-10-1-0-4 ~]$ ansible all -a 'sudo cp mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/share/java/'
+[ec2-user@ip-10-1-0-4 ~]$ ansible all -a 'sudo cp mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/share/java/mysql-connector-java.jar'
 
 [ec2-user@ip-10-1-0-4 ~]$ ansible all -a 'ls /usr/share/java/'
 sebc3 | SUCCESS | rc=0 >>
-mysql-connector-java-5.1.40-bin.jar
+mysql-connector-java.jar
 
 sebc5 | SUCCESS | rc=0 >>
-mysql-connector-java-5.1.40-bin.jar
+mysql-connector-java.jar
 
 sebc2 | SUCCESS | rc=0 >>
-mysql-connector-java-5.1.40-bin.jar
+mysql-connector-java.jar
 
 sebc1 | SUCCESS | rc=0 >>
-mysql-connector-java-5.1.40-bin.jar
+mysql-connector-java.jar
 
 sebc4 | SUCCESS | rc=0 >>
-mysql-connector-java-5.1.40-bin.jar
+mysql-connector-java.jar
 ```
 
 And now we need to add the connector to the java classpath (on every node):
@@ -155,19 +155,19 @@ And now we need to add the connector to the java classpath (on every node):
 
 [ec2-user@ip-10-1-0-4 ~]$ ansible all -a "sudo cat /etc/profile.d/classpath.sh"
 sebc3 | SUCCESS | rc=0 >>
-export CLASSPATH=/usr/share/java/mysql-connector-java-5.1.40-bin.jar:$CLASSPATH
+export CLASSPATH=/usr/share/java/mysql-connector-java.jar:$CLASSPATH
 
 sebc2 | SUCCESS | rc=0 >>
-export CLASSPATH=/usr/share/java/mysql-connector-java-5.1.40-bin.jar:$CLASSPATH
+export CLASSPATH=/usr/share/java/mysql-connector-java.jar:$CLASSPATH
 
 sebc4 | SUCCESS | rc=0 >>
-export CLASSPATH=/usr/share/java/mysql-connector-java-5.1.40-bin.jar:$CLASSPATH
+export CLASSPATH=/usr/share/java/mysql-connector-java.jar:$CLASSPATH
 
 sebc5 | SUCCESS | rc=0 >>
-export CLASSPATH=/usr/share/java/mysql-connector-java-5.1.40-bin.jar:$CLASSPATH
+export CLASSPATH=/usr/share/java/mysql-connector-java.jar:$CLASSPATH
 
 sebc1 | SUCCESS | rc=0 >>
-export CLASSPATH=/usr/share/java/mysql-connector-java-5.1.40-bin.jar:$CLASSPATH
+export CLASSPATH=/usr/share/java/mysql-connector-java.jar:$CLASSPATH
 ```
 
 ## Stup root password for mysql:
