@@ -106,6 +106,7 @@ sys     0m0.340s
 ```
 
 ## Time output
+
 ```
 real    2m12.536s
 user    0m6.966s
@@ -113,6 +114,8 @@ sys     0m0.340s
 ```
 
 ## `/user/donald/tgen512m` 
+
+```
 [donald@ip-10-1-0-7 ec2-user]$ hdfs dfs -ls /user/donald/tgen512m
 Found 7 items
 -rw-r--r--   3 donald donald          0 2017-01-27 11:27 /user/donald/tgen512m/_SUCCESS
@@ -125,6 +128,7 @@ Found 7 items
 ```
 
 ## Blocks associated with the directory
+
 ```
 [donald@ip-10-1-0-7 ec2-user]$ hadoop fsck /user/donald/tgen512m
 DEPRECATED: Use of this script to execute hdfs command is deprecated.
